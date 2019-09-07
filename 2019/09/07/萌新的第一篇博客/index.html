@@ -67,15 +67,26 @@
 <p>HTTP是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。请求和响应消息的头以ASCII码形式给出；而消息内容则具有一个类似MIME的格式。这个简单模型是早期Web成功的有功之臣，因为它使得开发和部署是那么的直截了当。</p>
 <p>架设 Git 服务器时常用 SSH 协议作为传输协议。 因为大多数环境下服务器已经支持通过 SSH 访问 —— 即使没有也很容易架设。 SSH 协议也是一个验证授权的网络协议；并且，因为其普遍性，架设和使用都很容易。</p>
 <p>Git 协议是包含在 Git 里的一个特殊的守护进程；它监听在一个特定的端口（9418），类似于 SSH 服务，但是访问无需任何授权。 要让版本库支持 Git 协议，需要先创建一个 git-daemon-export-ok 文件 —— 它是 Git 协议守护进程为这个版本库提供服务的必要条件 —— 但是除此之外没有任何安全措施。 要么谁都可以克隆这个版本库，要么谁也不能。 这意味着，通常不能通过 Git 协议推送。 由于没有授权机制，一旦你开放推送操作，意味着网络上知道这个项目 URL 的人都可以向项目推送数据。</p>
-<h1 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h1><h2 id="1-本地仓库的初始化与绑定远端仓库"><a href="#1-本地仓库的初始化与绑定远端仓库" class="headerlink" title="1.本地仓库的初始化与绑定远端仓库"></a>1.本地仓库的初始化与绑定远端仓库</h2><h4 id="首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create-a-new-repo”按钮，创建一个新的仓库。"><a href="#首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create-a-new-repo”按钮，创建一个新的仓库。" class="headerlink" title="首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库。"></a>首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库。</h4><p><img src="1.1.png" alt><br><img src="https://i.imgur.com/rF4VTDZ.jpg" alt><br><img src="https://imgchr.com/i/n1rrRA" alt></p>
+<h1 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h1><h2 id="1-本地仓库的初始化与绑定远端仓库"><a href="#1-本地仓库的初始化与绑定远端仓库" class="headerlink" title="1.本地仓库的初始化与绑定远端仓库"></a>1.本地仓库的初始化与绑定远端仓库</h2><h4 id="首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create-a-new-repo”按钮，创建一个新的仓库。"><a href="#首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create-a-new-repo”按钮，创建一个新的仓库。" class="headerlink" title="首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库。"></a>首先在github上创建一个仓库：登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库。</h4><p><img src="https://i.imgur.com/J4MjweA.png" alt></p>
 <h4 id="然后在本地打开Git-Bash-Here，然后再输入命令：git-clone-……，-就会将github上的项目克隆到本地了。"><a href="#然后在本地打开Git-Bash-Here，然后再输入命令：git-clone-……，-就会将github上的项目克隆到本地了。" class="headerlink" title="然后在本地打开Git Bash Here，然后再输入命令：git clone  ……， 就会将github上的项目克隆到本地了。"></a>然后在本地打开Git Bash Here，然后再输入命令：git clone  ……， 就会将github上的项目克隆到本地了。</h4><p><img src="https://i.imgur.com/KAWhv7P.png" alt></p>
 <h4 id="将本地克隆的项目，创建本地git仓库，再将工作区文件提交到缓存区中，然后将缓冲区的文件提交到git仓库中。"><a href="#将本地克隆的项目，创建本地git仓库，再将工作区文件提交到缓存区中，然后将缓冲区的文件提交到git仓库中。" class="headerlink" title="将本地克隆的项目，创建本地git仓库，再将工作区文件提交到缓存区中，然后将缓冲区的文件提交到git仓库中。"></a>将本地克隆的项目，创建本地git仓库，再将工作区文件提交到缓存区中，然后将缓冲区的文件提交到git仓库中。</h4><p><img src="https://i.imgur.com/X6DB90x.png" alt></p>
-<h4 id="提交本地仓库的项目文件到远端仓库github。"><a href="#提交本地仓库的项目文件到远端仓库github。" class="headerlink" title="提交本地仓库的项目文件到远端仓库github。"></a>提交本地仓库的项目文件到远端仓库github。</h4><p><img src="https://i.imgur.com/JjnYatm.png" alt><br><img src="https://i.imgur.com/2Ja2ZRX.png" alt></p>
-<h4 id="输入命令：git-push，就会将本地仓库的文件上传到github上了。"><a href="#输入命令：git-push，就会将本地仓库的文件上传到github上了。" class="headerlink" title="输入命令：git push，就会将本地仓库的文件上传到github上了。"></a>输入命令：git push，就会将本地仓库的文件上传到github上了。</h4><h2 id="2-将任意代码push到master分支上"><a href="#2-将任意代码push到master分支上" class="headerlink" title="2.将任意代码push到master分支上"></a>2.将任意代码push到master分支上</h2><p>####在刚才创建ssh  key的默认目录下将想要上传的项目文件复制到此目录<br><img src="https://i.imgur.com/Q6f2O8R.png" alt><br><img src="https://i.imgur.com/kaaS2Lq.png" alt><br><img src="https://i.imgur.com/iqIt9IJ.png" alt><br><img src="https://i.imgur.com/IStN7Uf.png" alt></p>
+<h4 id="提交本地仓库的项目文件到远端仓库github。"><a href="#提交本地仓库的项目文件到远端仓库github。" class="headerlink" title="提交本地仓库的项目文件到远端仓库github。"></a>提交本地仓库的项目文件到远端仓库github。</h4><p><img src="https://i.imgur.com/JjnYatm.png" alt></p>
+<p><img src="https://i.imgur.com/2Ja2ZRX.png" alt></p>
+<h4 id="输入命令：git-push，就会将本地仓库的文件上传到github上了。"><a href="#输入命令：git-push，就会将本地仓库的文件上传到github上了。" class="headerlink" title="输入命令：git push，就会将本地仓库的文件上传到github上了。"></a>输入命令：git push，就会将本地仓库的文件上传到github上了。</h4><h2 id="2-将任意代码push到master分支上"><a href="#2-将任意代码push到master分支上" class="headerlink" title="2.将任意代码push到master分支上"></a>2.将任意代码push到master分支上</h2><p>####在刚才创建ssh  key的默认目录下将想要上传的项目文件复制到此目录<br><img src="https://i.imgur.com/Q6f2O8R.png" alt></p>
+<p><img src="https://i.imgur.com/kaaS2Lq.png" alt></p>
+<p><img src="https://i.imgur.com/iqIt9IJ.png" alt></p>
+<p><img src="https://i.imgur.com/IStN7Uf.png" alt></p>
 <h4 id="完成，再打开自己的仓库就会出现刚刚上传的项目文件"><a href="#完成，再打开自己的仓库就会出现刚刚上传的项目文件" class="headerlink" title="完成，再打开自己的仓库就会出现刚刚上传的项目文件"></a>完成，再打开自己的仓库就会出现刚刚上传的项目文件</h4><p><img src="https://i.imgur.com/IrOUWiR.png" alt></p>
-<h2 id="3-创建一个新的分支，并将代码push到新的分支上"><a href="#3-创建一个新的分支，并将代码push到新的分支上" class="headerlink" title="3.创建一个新的分支，并将代码push到新的分支上"></a>3.创建一个新的分支，并将代码push到新的分支上</h2><p><img src="https://i.imgur.com/JpmDAUg.png" alt><br><img src="https://i.imgur.com/QjtaWDU.png" alt></p>
+<h2 id="3-创建一个新的分支，并将代码push到新的分支上"><a href="#3-创建一个新的分支，并将代码push到新的分支上" class="headerlink" title="3.创建一个新的分支，并将代码push到新的分支上"></a>3.创建一个新的分支，并将代码push到新的分支上</h2><p><img src="https://i.imgur.com/JpmDAUg.png" alt></p>
+<p><img src="https://i.imgur.com/QjtaWDU.png" alt></p>
 <h2 id="4-将这个新的分支与master分支合并"><a href="#4-将这个新的分支与master分支合并" class="headerlink" title="4.将这个新的分支与master分支合并"></a>4.将这个新的分支与master分支合并</h2><p><img src="https://i.imgur.com/T4J5C0F.png" alt></p>
-<h2 id="5-代码回溯"><a href="#5-代码回溯" class="headerlink" title="5.代码回溯"></a>5.代码回溯</h2><p><img src="https://i.imgur.com/NpWE0Uv.png" alt><br><img src="https://i.imgur.com/ngRsyz1.png" alt><br><img src="https://i.imgur.com/45fKKvO.png" alt><br><img src="https://i.imgur.com/Wrc2Fn0.png" alt><br><img src="https://i.imgur.com/wLUobBe.png" alt><br><img src="https://i.imgur.com/A8F679K.png" alt></p>
+<h2 id="5-代码回溯"><a href="#5-代码回溯" class="headerlink" title="5.代码回溯"></a>5.代码回溯</h2><p><img src="https://i.imgur.com/NpWE0Uv.png" alt></p>
+<p><img src="https://i.imgur.com/ngRsyz1.png" alt></p>
+<p><img src="https://i.imgur.com/45fKKvO.png" alt></p>
+<p><img src="https://i.imgur.com/Wrc2Fn0.png" alt></p>
+<p><img src="https://i.imgur.com/wLUobBe.png" alt></p>
+<p><img src="https://i.imgur.com/4ulMjsf.png" alt></p>
+<p><img src="https://i.imgur.com/A8F679K.png" alt></p>
 
       </div>
     </div>
